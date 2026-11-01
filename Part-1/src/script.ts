@@ -37,3 +37,20 @@ const grettings = (fullName: string, gretting = "Hello") => {
 };
 
 grettings("Shakibul");
+
+//* rest perameter (...args)
+
+const sum = (...numbers: number[]) => {
+  return numbers.reduce((total, sum) => total + sum, 0);
+};
+
+sum(1, 2, 3, 4, 5, 6);
+
+const logUserActio = (
+  ...args: [name: string, age: number, isActive: boolean]
+) => {
+  const [name, age] = args;
+  console.log(name + "is" + age);
+};
+
+logUserActio("Shakibul", 19, true);
