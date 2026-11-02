@@ -57,7 +57,10 @@ logUserActio("Shakibul", 19, true);
 
 //* object type, type alias and interface
 
-type userName = string;
+type Address = {
+  stateName: string;
+  holdingNumber: number;
+};
 
 type TUser = {
   name: string;
@@ -65,6 +68,7 @@ type TUser = {
   isActive: boolean;
   action: () => void;
   badges: string[];
+  address: Address;
 };
 
 interface IUser {
@@ -75,10 +79,14 @@ interface IUser {
   badges: string[];
 }
 
-const user: IUser = {
+const user: TUser = {
   name: "themdshakibul",
   age: 19,
   isActive: true,
   action: () => console.log("themdshakibul"),
   badges: ["themd", "shakibul"],
+  address: {
+    stateName: "Doulatpur",
+    holdingNumber: 20,
+  },
 };
