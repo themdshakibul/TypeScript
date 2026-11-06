@@ -48,11 +48,46 @@ const move = (animal: Bird | Fish) => {
     animal.fly();
     return;
   }
-
   animal.swim();
 };
 
-//*
-//*
-//*
-//*
+//* "interfaceof" chek
+
+// const date = new Date();
+// const err = new Error("Something went wrong");
+
+// console.log(date instanceof Date);
+// console.log(err instanceof Error);
+
+const showDate = (x: Date | string) => {
+  if (x instanceof Date) {
+    console.log(x.toISOString());
+    return;
+  }
+
+  const date = new Date(x);
+  console.log(date.toISOString());
+};
+
+// showDate(new Date("12-12-2026"));
+showDate("12-16-1971");
+
+//* Descriminated union
+
+interface Circle {
+  kind: "circle";
+  round: number;
+}
+
+interface Squre {
+  kind: "squre";
+  sideLength: number;
+}
+
+const getArea = (shape: Circle | Squre) => {
+  if (shape.kind === "circle") {
+    console.log(shape.round);
+  } else {
+    console.log(shape.sideLength);
+  }
+};
